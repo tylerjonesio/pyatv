@@ -3,7 +3,7 @@
 import asyncio
 from typing import Callable, Mapping, Optional
 
-import miniaudio
+# import miniaudio
 
 import pyatv
 
@@ -95,8 +95,9 @@ async def is_streamable(filename: str) -> bool:
     file is missing or lack of permissions.
     """
     try:
-        loop = asyncio.get_event_loop()
-        await loop.run_in_executor(None, miniaudio.get_file_info, filename)
+        # loop = asyncio.get_event_loop()
+        return False
+        # await loop.run_in_executor(None, miniaudio.get_file_info, filename)
     except Exception:
         return False
     return True
